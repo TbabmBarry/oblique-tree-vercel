@@ -1,11 +1,12 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
 import * as fs from "fs";
+import * as path from "path";
 import { parse } from "csv-parse";
 
 const readFile : (file : string) => Promise<string[][]> = (file : string) => {
     return new Promise((resolve, reject) => {
         const rows : string[][] = [];
-        fs.createReadStream("static/" + file)
+        fs.createReadStream(path.resolve("./static", file))
             .pipe(parse({ delimiter: ",", from_line: 1 }))
             .on("data", (row : string[]) => {
                 rows.push(row);
@@ -21,7 +22,7 @@ const readFile : (file : string) => Promise<string[][]> = (file : string) => {
 
 module.exports = async (req: VercelRequest, res: VercelResponse) => {
     const promises : Promise<string[][]>[] = [];
-    fs.readdir('static', (error, files) => {
+    fs.readdir(path.resolve('./static'), (error, files) => {
         for (let i = 0; i < files.length; i++) {
             promises.push(readFile(files[i]));
         }
