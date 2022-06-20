@@ -1,0 +1,12 @@
+{
+    "rewrites": [
+        {
+            "source": "/", 
+            "destination": "/index.html"
+        },
+        {
+            "source": "/api/dataset", 
+            "destination": "/api/dataset.ts"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "clear",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/frameworks": "^1.0.1",
+    "@vercel/node": "^2.2.0",
+    "@vercel/routing-utils": "^1.13.4",
+    "csv-parse": "^5.2.0",
+    "glob": "^8.0.3"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^18.0.0"
+  }
+}
