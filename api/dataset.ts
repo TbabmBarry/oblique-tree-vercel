@@ -22,7 +22,6 @@ const readFile : (file : string) => Promise<string[][]> = (file : string) => {
 module.exports = async (req: VercelRequest, res: VercelResponse) => {
     const promises : Promise<string[][]>[] = [];
     fs.readdir('static', (error, files) => {
-        console.log(files);
         for (let i = 0; i < files.length; i++) {
             promises.push(readFile(files[i]));
         }
