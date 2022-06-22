@@ -5,8 +5,8 @@
             "destination": "/index.html"
         },
         {
-            "source": "/api/dataset", 
-            "destination": "/api/dataset.ts"
+            "source": "/api/getDataset", 
+            "destination": "/api/getDataset.ts"
         }
     ]
 }
